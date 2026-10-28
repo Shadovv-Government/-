@@ -1,0 +1,9 @@
+table,rows,duplicate_key_excess,empty_key_rows,identical_row_excess
+orders,99441,0,0,0
+order_items,112650,0,0,0
+order_payments,103886,0,0,0
+order_reviews,99224,814,0,0
+products,32951,0,0,0
+sellers,3095,0,0,0
+customers,99441,0,0,0
+product_category_translation,71,0,0,0
