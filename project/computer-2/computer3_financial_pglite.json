@@ -1,0 +1,28 @@
+[
+  [],
+  [],
+  [
+    {
+      "mismatched_payment_orders": 0
+    }
+  ],
+  [],
+  [
+    {
+      "source": "raw_delivered",
+      "item_rows": 110197,
+      "priced_rows": 110197,
+      "freight_rows": 110197,
+      "goods": "13221498.11",
+      "freight": "2202965.54"
+    },
+    {
+      "source": "core_delivered",
+      "item_rows": 110197,
+      "priced_rows": 110197,
+      "freight_rows": 110197,
+      "goods": "13221498.11",
+      "freight": "2202965.54"
+    }
+  ]
+]

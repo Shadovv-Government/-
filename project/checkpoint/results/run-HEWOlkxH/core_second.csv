@@ -1,0 +1,9 @@
+table_name,row_count,content_md5
+category_translations,71,ec7f7112d95c7f49204d820e41a3fe25
+customers,99441,58c716c64b6b3c0252e2a4f55d68473d
+order_items,112650,a2b8c509bb33ef60c8b50f9f0aa5f6fb
+order_payments,103886,2c4a259e95e8bf3e31013fc4beae4149
+order_reviews,99224,8974db8f0f72e2c7ed26855f7e2f1dec
+orders,99441,52ec074cff9e9690aeb720b4b9172a42
+products,32951,25902605af5cc8ced4812d14319369fc
+sellers,3095,3e8656c21dc22e3a456aefc11ca8e92f

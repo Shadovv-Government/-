@@ -1,0 +1,12 @@
+relationship,errors
+customers -> person id,0
+items -> orders,0
+items -> products,0
+items -> sellers,0
+orders -> customers,0
+payments -> orders,0
+raw/core customer -> person mapping,0
+raw/core item -> product mapping,0
+raw/core item -> seller mapping,0
+raw/core order -> customer mapping,0
+reviews -> orders,0

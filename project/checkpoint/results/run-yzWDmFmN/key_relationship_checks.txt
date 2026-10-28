@@ -1,0 +1,28 @@
+      table_name       | raw_rows | core_rows | missing_keys | extra_keys | duplicate_key_excess | null_key_rows
+-----------------------+----------+-----------+--------------+------------+----------------------+---------------
+ category_translations |       71 |        71 |            0 |          0 |                    0 |             0
+ customers             |    99441 |     99441 |            0 |          0 |                    0 |             0
+ order_items           |   112650 |    112650 |            0 |          0 |                    0 |             0
+ order_payments        |   103886 |    103886 |            0 |          0 |                    0 |             0
+ order_reviews         |    99224 |     99224 |            0 |          0 |                    0 |             0
+ orders                |    99441 |     99441 |            0 |          0 |                    0 |             0
+ products              |    32951 |     32951 |            0 |          0 |                    0 |             0
+ sellers               |     3095 |      3095 |            0 |          0 |                    0 |             0
+(8 rows)
+
+            relationship             | errors
+-------------------------------------+--------
+ customers -> person id              |      0
+ items -> orders                     |      0
+ items -> products                   |      0
+ items -> sellers                    |      0
+ orders -> customers                 |      0
+ payments -> orders                  |      0
+ raw/core customer -> person mapping |      0
+ raw/core item -> product mapping    |      0
+ raw/core item -> seller mapping     |      0
+ raw/core order -> customer mapping  |      0
+ reviews -> orders                   |      0
+(11 rows)
+
+NOTICE:  PASS: ключи сохранены, обязательные связи найдены

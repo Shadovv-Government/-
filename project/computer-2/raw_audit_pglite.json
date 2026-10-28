@@ -1,0 +1,429 @@
+[
+  [
+    {
+      "table_name": "customers",
+      "actual": 99441,
+      "initial_expected": 99441,
+      "delta": 0
+    },
+    {
+      "table_name": "order_items",
+      "actual": 112650,
+      "initial_expected": 112650,
+      "delta": 0
+    },
+    {
+      "table_name": "order_payments",
+      "actual": 103886,
+      "initial_expected": 103886,
+      "delta": 0
+    },
+    {
+      "table_name": "order_reviews",
+      "actual": 99224,
+      "initial_expected": 99224,
+      "delta": 0
+    },
+    {
+      "table_name": "orders",
+      "actual": 99441,
+      "initial_expected": 99441,
+      "delta": 0
+    },
+    {
+      "table_name": "product_category_translation",
+      "actual": 71,
+      "initial_expected": 71,
+      "delta": 0
+    },
+    {
+      "table_name": "products",
+      "actual": 32951,
+      "initial_expected": 32951,
+      "delta": 0
+    },
+    {
+      "table_name": "sellers",
+      "actual": 3095,
+      "initial_expected": 3095,
+      "delta": 0
+    }
+  ],
+  [
+    {
+      "table_name": "customers",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "order_items",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "order_payments",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "orders",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "product_category_translation",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "products",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "reviews_review_id_only",
+      "missing_key_rows": "0",
+      "duplicate_groups": 789,
+      "excess_duplicate_rows": "814"
+    },
+    {
+      "table_name": "reviews_review_id_order_id",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    },
+    {
+      "table_name": "sellers",
+      "missing_key_rows": "0",
+      "duplicate_groups": 0,
+      "excess_duplicate_rows": "0"
+    }
+  ],
+  [
+    {
+      "relation": "orders -> customers",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "items -> orders",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "items -> products",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "items -> sellers",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "payments -> orders",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "reviews -> orders",
+      "unmatched_rows": 0
+    },
+    {
+      "relation": "products -> category translation",
+      "unmatched_rows": 623
+    }
+  ],
+  [
+    {
+      "field_name": "items.freight_value",
+      "total": 112650,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "items.order_item_id",
+      "total": 112650,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "items.price",
+      "total": 112650,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "items.shipping_limit",
+      "total": 112650,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "orders.approved",
+      "total": 99441,
+      "missing": 160,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "orders.carrier",
+      "total": 99441,
+      "missing": 1783,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "orders.delivered",
+      "total": 99441,
+      "missing": 2965,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "orders.estimated",
+      "total": 99441,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "orders.purchase",
+      "total": 99441,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "payments.payment_installments",
+      "total": 103886,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "payments.payment_sequential",
+      "total": 103886,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "payments.payment_value",
+      "total": 103886,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "reviews.answer",
+      "total": 99224,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "reviews.creation",
+      "total": 99224,
+      "missing": 0,
+      "invalid_nonempty": 0
+    },
+    {
+      "field_name": "reviews.review_score",
+      "total": 99224,
+      "missing": 0,
+      "invalid_nonempty": 0
+    }
+  ],
+  [
+    {
+      "order_status": "delivered",
+      "count": 96478
+    },
+    {
+      "order_status": "shipped",
+      "count": 1107
+    },
+    {
+      "order_status": "canceled",
+      "count": 625
+    },
+    {
+      "order_status": "unavailable",
+      "count": 609
+    },
+    {
+      "order_status": "invoiced",
+      "count": 314
+    },
+    {
+      "order_status": "processing",
+      "count": 301
+    },
+    {
+      "order_status": "created",
+      "count": 5
+    },
+    {
+      "order_status": "approved",
+      "count": 2
+    }
+  ],
+  [
+    {
+      "product_category_name": null,
+      "products": 610
+    },
+    {
+      "product_category_name": "portateis_cozinha_e_preparadores_de_alimentos",
+      "products": 10
+    },
+    {
+      "product_category_name": "pc_gamer",
+      "products": 3
+    }
+  ],
+  [
+    {
+      "delivered_without_delivery_date": 8
+    }
+  ],
+  [
+    {
+      "customer_records": 99441,
+      "customer_ids": 99441,
+      "unique_customer_ids": 96096
+    }
+  ],
+  [
+    {
+      "customers": 96096,
+      "repeat_customers": 2997,
+      "repeat_pct": "3.118756"
+    }
+  ],
+  [
+    {
+      "item_rows": 112650,
+      "item_payment_join_rows": "117601",
+      "triple_join_rows": "117329"
+    }
+  ],
+  [
+    {
+      "orders_without_items": 775
+    }
+  ],
+  [
+    {
+      "orders_without_payments": 1
+    }
+  ],
+  [
+    {
+      "comparable_orders": 98665,
+      "any_difference": 639,
+      "difference_over_one_cent": 366
+    }
+  ],
+  [
+    {
+      "goods_revenue_expected_13221498_11": "13221498.11",
+      "average_order_expected_159_88": "159.88"
+    }
+  ],
+  [
+    {
+      "review_id": "08528f70f579f0c830189efc523d2182",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "0c76e7a547a531e7bf9f0b99cba071c1",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "1fb4ddc969e6bea80e38deec00393a6f",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "2172867fd5b1a55f98fe4608e1547b4b",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "2d6ac45f859465b5c185274a1c929637",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "308316408775d1600dad81bd3184556d",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "32415bbf6e341d5d517080a796f79b5c",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "3415c9f764e478409e8e0660ae816dd2",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "38821b5c496b678cf91acc34892805ad",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "39b4603793c1c7f5f36d809b4a218664",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "4219a80ab469e3fc9901437b73da3f75",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "44e9f871226d8a130de3fc39dfbdf0c5",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "4548534449b1f572e357211b90724f1b",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "4d0e6dd087008d1f992d25ef6e1f619f",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "69a1068c3128a14994e3e422e4539e04",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "70509c441d994fa03d6c1457930c9024",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "7b606b0d57b078384f0b58eac1d41d78",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "832acec9bbf4efe65c3fb6423d8b4ed7",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "9e25d6e3025e9b9a0fc7f03588d33e2b",
+      "rows": 3,
+      "orders": 3
+    },
+    {
+      "review_id": "abbfacb2964f74f6487c9c10ac46daa6",
+      "rows": 3,
+      "orders": 3
+    }
+  ]
+]

@@ -1,0 +1,44 @@
+[
+  [
+    {
+      "customer_records": 99441,
+      "customer_ids": 99441,
+      "people_ids": 96096,
+      "missing_people_ids": 0
+    }
+  ],
+  [
+    {
+      "order_status": "approved",
+      "orders": 2
+    },
+    {
+      "order_status": "canceled",
+      "orders": 625
+    },
+    {
+      "order_status": "created",
+      "orders": 5
+    },
+    {
+      "order_status": "delivered",
+      "orders": 96478
+    },
+    {
+      "order_status": "invoiced",
+      "orders": 314
+    },
+    {
+      "order_status": "processing",
+      "orders": 301
+    },
+    {
+      "order_status": "shipped",
+      "orders": 1107
+    },
+    {
+      "order_status": "unavailable",
+      "orders": 609
+    }
+  ]
+]

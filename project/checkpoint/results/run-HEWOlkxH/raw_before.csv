@@ -1,0 +1,9 @@
+table_name,rows,content_md5
+customers,99441,58c716c64b6b3c0252e2a4f55d68473d
+order_items,112650,0f36255ac01f6a8f5435ef7196062e22
+order_payments,103886,f42305c6cb6d7bfe0322869855c45cc3
+order_reviews,99224,18e3a380507a45e084b8814aeac75b30
+orders,99441,69c29382f1d5eecedc9381cfe513df9c
+product_category_translation,71,ec7f7112d95c7f49204d820e41a3fe25
+products,32951,125f724b86f18d8132943bf91ddb41ca
+sellers,3095,3e8656c21dc22e3a456aefc11ca8e92f
