@@ -1,0 +1,169 @@
+Pager usage is off.
+Timing is on.
+BEGIN
+Time: 4.281 ms
+01. Число строк: отклонение от начальной выгрузки не равно ошибке после вброса
+          table_name          | actual | initial_expected | delta 
+------------------------------+--------+------------------+-------
+ customers                    |  99441 |            99441 |     0
+ order_items                  | 112650 |           112650 |     0
+ order_payments               | 103886 |           103886 |     0
+ order_reviews                |  99224 |            99224 |     0
+ orders                       |  99441 |            99441 |     0
+ product_category_translation |     71 |               71 |     0
+ products                     |  32951 |            32951 |     0
+ sellers                      |   3095 |             3095 |     0
+(8 rows)
+
+Time: 86.430 ms
+02. Пустые ключи и повторения кандидатов (для review_id ожидается аномалия)
+          table_name          | missing_key_rows | duplicate_groups | excess_duplicate_rows 
+------------------------------+------------------+------------------+-----------------------
+ customers                    |                0 |                0 |                     0
+ order_items                  |                0 |                0 |                     0
+ order_payments               |                0 |                0 |                     0
+ orders                       |                0 |                0 |                     0
+ product_category_translation |                0 |                0 |                     0
+ products                     |                0 |                0 |                     0
+ reviews_review_id_only       |                0 |              789 |                   814
+ reviews_review_id_order_id   |                0 |                0 |                     0
+ sellers                      |                0 |                0 |                     0
+(9 rows)
+
+Time: 2054.509 ms (00:02.055)
+03. Нарушенные связи; отсутствие перевода категории само по себе не повод удалять товар
+             relation             | unmatched_rows 
+----------------------------------+----------------
+ products -> category translation |            623
+ items -> sellers                 |              0
+ items -> products                |              0
+ payments -> orders               |              0
+ items -> orders                  |              0
+ reviews -> orders                |              0
+ orders -> customers              |              0
+(7 rows)
+
+Time: 183.757 ms
+04. Пустые и некорректные значения; pg_input_is_valid доступна в PostgreSQL 16
+          field_name           | total  | missing | invalid_nonempty 
+-------------------------------+--------+---------+------------------
+ items.freight_value           | 112650 |       0 |                0
+ items.order_item_id           | 112650 |       0 |                0
+ items.price                   | 112650 |       0 |                0
+ items.shipping_limit          | 112650 |       0 |                0
+ orders.approved               |  99441 |     160 |                0
+ orders.carrier                |  99441 |    1783 |                0
+ orders.delivered              |  99441 |    2965 |                0
+ orders.estimated              |  99441 |       0 |                0
+ orders.purchase               |  99441 |       0 |                0
+ payments.payment_installments | 103886 |       0 |                0
+ payments.payment_sequential   | 103886 |       0 |                0
+ payments.payment_value        | 103886 |       0 |                0
+ reviews.answer                |  99224 |       0 |                0
+ reviews.creation              |  99224 |       0 |                0
+ reviews.review_score          |  99224 |       0 |                0
+(15 rows)
+
+Time: 741.667 ms
+05. Статусы и категории без перевода
+ order_status | count 
+--------------+-------
+ delivered    | 96478
+ shipped      |  1107
+ canceled     |   625
+ unavailable  |   609
+ invoiced     |   314
+ processing   |   301
+ created      |     5
+ approved     |     2
+(8 rows)
+
+Time: 31.521 ms
+             product_category_name             | products 
+-----------------------------------------------+----------
+                                               |      610
+ portateis_cozinha_e_preparadores_de_alimentos |       10
+ pc_gamer                                      |        3
+(3 rows)
+
+Time: 6.194 ms
+ delivered_without_delivery_date 
+---------------------------------
+                               8
+(1 row)
+
+Time: 32.080 ms
+06. Покупатель: customer_id и стабильный customer_unique_id
+ customer_records | customer_ids | unique_customer_ids 
+------------------+--------------+---------------------
+            99441 |        99441 |               96096
+(1 row)
+
+Time: 126.372 ms
+ customers | repeat_customers | repeat_pct 
+-----------+------------------+------------
+     96096 |             2997 |   3.118756
+(1 row)
+
+Time: 138.085 ms
+07. Кратности: позиции нельзя напрямую умножать на платежи и отзывы
+ item_rows | item_payment_join_rows | triple_join_rows 
+-----------+------------------------+------------------
+    112650 |                 117601 |           117329
+(1 row)
+
+Time: 1641.107 ms (00:01.641)
+ orders_without_items 
+----------------------
+                  775
+(1 row)
+
+Time: 64.033 ms
+ orders_without_payments 
+-------------------------
+                       1
+(1 row)
+
+Time: 59.196 ms
+08. Диагностика платежей: агрегаты ДО соединения; не автоматический FAIL
+ comparable_orders | any_difference | difference_over_one_cent 
+-------------------+----------------+--------------------------
+             98665 |            639 |                      366
+(1 row)
+
+Time: 664.113 ms
+09. Независимые финансовые агрегаты raw: только диагностическая сверка, не сдаваемые ответы
+ goods_revenue_expected_13221498_11 | average_order_expected_159_88 
+------------------------------------+-------------------------------
+                        13221498.11 |                        159.88
+(1 row)
+
+Time: 345.719 ms
+10. Пример повторного review_id: не удаляйте отзывы только по этому полю
+            review_id             | rows | orders 
+----------------------------------+------+--------
+ 08528f70f579f0c830189efc523d2182 |    3 |      3
+ 0c76e7a547a531e7bf9f0b99cba071c1 |    3 |      3
+ 1fb4ddc969e6bea80e38deec00393a6f |    3 |      3
+ 2172867fd5b1a55f98fe4608e1547b4b |    3 |      3
+ 2d6ac45f859465b5c185274a1c929637 |    3 |      3
+ 308316408775d1600dad81bd3184556d |    3 |      3
+ 32415bbf6e341d5d517080a796f79b5c |    3 |      3
+ 3415c9f764e478409e8e0660ae816dd2 |    3 |      3
+ 38821b5c496b678cf91acc34892805ad |    3 |      3
+ 39b4603793c1c7f5f36d809b4a218664 |    3 |      3
+ 4219a80ab469e3fc9901437b73da3f75 |    3 |      3
+ 44e9f871226d8a130de3fc39dfbdf0c5 |    3 |      3
+ 4548534449b1f572e357211b90724f1b |    3 |      3
+ 4d0e6dd087008d1f992d25ef6e1f619f |    3 |      3
+ 69a1068c3128a14994e3e422e4539e04 |    3 |      3
+ 70509c441d994fa03d6c1457930c9024 |    3 |      3
+ 7b606b0d57b078384f0b58eac1d41d78 |    3 |      3
+ 832acec9bbf4efe65c3fb6423d8b4ed7 |    3 |      3
+ 9e25d6e3025e9b9a0fc7f03588d33e2b |    3 |      3
+ abbfacb2964f74f6487c9c10ac46daa6 |    3 |      3
+(20 rows)
+
+Time: 106.259 ms
+COMMIT
+Time: 0.313 ms
