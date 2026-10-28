@@ -13,7 +13,6 @@
 | [qa/](qa/) | Профилирование и независимые проверки исходных данных |
 | [project/checkpoint/](project/checkpoint/) | Сквозная проверка и сохранённые результаты прогонов |
 | [project/deliverables/](project/deliverables/) | Концепция дашборда |
-| [output/](output/) | Презентации и иллюстрации |
 
 [Записка о решениях](project/README_SOLUTION.md) и [стратегия развития](project/computer-2/strategy.md) дополняют материалы сдачи. Исходные PDF и презентация кейса находятся в корне.
 
