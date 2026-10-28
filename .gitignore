@@ -1,3 +1,5 @@
 # Локальная копия репозитория организаторов — отдельный Git-репозиторий.
 hackathon-students/
 .DS_Store
+.chart-data-*/
+.presentation-build/
