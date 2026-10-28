@@ -1,0 +1,24 @@
+ dimension | mismatched_groups
+-----------+-------------------
+(0 rows)
+
+ dimension | key | raw_rows | core_rows | raw_priced_rows | core_priced_rows | raw_freight_rows | core_freight_rows | raw_price | core_price | raw_freight | core_freight
+-----------+-----+----------+-----------+-----------------+------------------+------------------+-------------------+-----------+------------+-------------+--------------
+(0 rows)
+
+ mismatched_payment_orders
+---------------------------
+                         0
+(1 row)
+
+ order_id | raw_rows | core_rows | raw_valued_rows | core_valued_rows | raw_amount | core_amount
+----------+----------+-----------+-----------------+------------------+------------+-------------
+(0 rows)
+
+     source     | item_rows | priced_rows | freight_rows |    goods    |  freight
+----------------+-----------+-------------+--------------+-------------+------------
+ raw_delivered  |    110197 |      110197 |       110197 | 13221498.11 | 2202965.54
+ core_delivered |    110197 |      110197 |       110197 | 13221498.11 | 2202965.54
+(2 rows)
+
+NOTICE:  PASS: группы заказов, продавцов, категорий и платежей совпадают

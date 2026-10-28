@@ -1,0 +1,51 @@
+BEGIN
+CREATE SCHEMA
+NOTICE:  schema "core" already exists, skipping
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 99441
+INSERT 0 3095
+INSERT 0 71
+INSERT 0 32951
+INSERT 0 99441
+INSERT 0 112650
+INSERT 0 103886
+INSERT 0 99224
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+NOTICE:  raw.customers → core.customers: 99441 строк
+NOTICE:  raw.sellers → core.sellers: 3095 строк
+NOTICE:  raw.product_category_translation → core.category_translations: 71 строк
+NOTICE:  raw.products → core.products: 32951 строк
+NOTICE:  raw.orders → core.orders: 99441 строк
+NOTICE:  raw.order_items → core.order_items: 112650 строк
+NOTICE:  raw.order_payments → core.order_payments: 103886 строк
+DO
+NOTICE:  raw.order_reviews → core.order_reviews: 99224 строк
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+COMMIT
